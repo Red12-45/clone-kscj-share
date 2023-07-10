@@ -1,6 +1,7 @@
 {
-  "name": "yes",
+  "name": "kscj-share",
   "version": "1.0.0",
+  "ignore-engines": true,
   "description": "",
   "main": "app.js",
   "dependencies": {
