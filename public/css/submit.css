@@ -1,0 +1,123 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.fa-key {
+  color: #343a40;
+  animation: spin 1s ease-in-out infinite;
+}
+
+.display-3 {
+  font-weight: bold;
+  margin-top: 20px;
+  animation: fadeInDown 0.5s ease-in-out;
+}
+
+.secret-text {
+  font-size: 18px;
+  margin-top: 20px;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+form {
+  margin-top: 40px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+input {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #343a40;
+  transition: 0.3s;
+}
+
+input:focus {
+  background-color: white;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #343a40;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #23272b;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 767px) {
+  .jumbotron {
+    padding: 20px;
+    width: 100%;
+  }
+
+  input {
+    font-size: 16px;
+  }
+}

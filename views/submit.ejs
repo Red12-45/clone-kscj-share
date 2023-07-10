@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KSCJ Grieviance</title>
+    <link rel="stylesheet" href="css/submit.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <i class="fa fa-key fa-5x"></i>
+        <h1 class="display-3">Stealth Share</h1>
+
+        <form action="/submit" method="POST">
+          <textarea
+            placeholder="Share your thoughts anonymously! Please describe in atleast 30 words ."
+            name="secret"
+            autocomplete="off"
+            required
+            minlength="30"
+            style="
+              width: 100%;
+              height: 200px;
+              border-radius: 8px;
+              word-wrap: break-word;
+            "
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

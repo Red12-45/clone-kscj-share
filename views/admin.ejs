@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
+    <title>Secrets</title>
+  </head>
+
+  <body>
+    <% function formatDate(date) { const options = { month: "short", day:
+    "numeric", hour: "numeric", minute: "numeric", }; const dateStr = new
+    Date(date).toLocaleString("en-US", options); const diff = Math.floor((new
+    Date() - new Date(date)) / 1000); const intervals = [ { label: "year",
+    seconds: 31536000 }, { label: "month", seconds: 2592000 }, { label: "week",
+    seconds: 604800 }, { label: "day", seconds: 86400 }, { label: "hour",
+    seconds: 3600 }, { label: "minute", seconds: 60 }, { label: "second",
+    seconds: 1 }, ]; for (let i = 0; i < intervals.length; i++) { const interval
+    = intervals[i]; const count = Math.floor(diff / interval.seconds); if (count
+    >= 1) { return `${dateStr} (${count} ${interval.label}${ count > 1 ? "s" :
+    "" } ago)`; } } return dateStr; } %>
+    <div class="jumbotron">
+      <i class="fas fa-key fa-7x"></i>
+
+      <h1>
+        <a href="/" style="text-decoration: none" class="display-3">
+          Admin Panel
+        </a>
+      </h1>
+
+      <% messages.reverse().forEach(function(message){ %>
+      <form action="/delete/<%= message._id %>" method="POST">
+        <p class="secret-text">
+          <%= message.secrets %> <br /><br />
+
+          <button
+            style="border: 0"
+            type="submit"
+            class="delete-btn"
+            action="/delete/<%= message._id %>"
+            method="POST"
+          >
+            🗑️
+          </button>
+
+          <span class="post-date"
+            >Posted <%= formatDate(message.createdAt) %></span
+          >
+        </p>
+      </form>
+      <% }) %>
+    </div>
+  </body>
+</html>
