@@ -35,14 +35,18 @@
         <a class="btn btn-light" href="/submit">Share</a>
       </div>
       <% messages.reverse().forEach(function(message){ %>
-
-      <p class="secret-text">
-        <%= message.secrets %> <br /><br />
-        <span class="post-date"
-          >Posted <%= formatDate(message.createdAt) %></span
-        >
-      </p>
+      <div class="secret-container">
+        <p class="secret-text">
+          <%= message.secrets %> <br /><br />
+          <span class="post-date"
+            >Posted <%= formatDate(message.createdAt) %></span
+          >
+        </p>
+      </div>
       <% }) %>
+      <div class="kscj-share">
+        <!-- Add your "kscj-share" content here -->
+      </div>
     </div>
   </body>
 </html>

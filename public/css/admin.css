@@ -130,13 +130,15 @@ p.secret-text {
   }
 }
 @media only screen and (max-width: 480px) {
-  .jumbotron a {
-    width: 45%;
-    margin-top: 20px;
-    display: block;
-    float: left;
+  .kscj-share {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 }
+
 @media (max-width: 767px) {
   .jumbotron .btn {
     padding: 8px 13px;
